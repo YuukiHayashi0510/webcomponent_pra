@@ -1,0 +1,44 @@
+<!-- Templateの書き方、Tailwind使えない -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="./register.js"></script>
+  </head>
+  <body>
+    <div class="flex flex-col justify-center items-center">
+      <h2>Todo</h2>
+      <template id="todo-template">
+        <div class="inline-flex gap-x-2 px-2 py-0.5">
+          <div>
+            <slot name="label">label</slot>
+          </div>
+          <div>
+            <slot name="text">text</slot>
+          </div>
+          <div>
+            <slot name="isDone">isDone</slot>
+          </div>
+        </div>
+      </template>
+      <todo-one>
+        <span slot="label">label</span>
+        <span slot="text">text</span>
+        <span slot="isDone">false</span>
+      </todo-one>
+      <todo-one>
+        <span slot="label">label</span>
+        <span slot="text">text</span>
+        <span slot="isDone">false</span>
+      </todo-one>
+      <todo-one>
+        <span slot="label">label</span>
+        <span slot="text">text</span>
+        <span slot="isDone">false</span>
+      </todo-one>
+    </div>
+  </body>
+</html>
